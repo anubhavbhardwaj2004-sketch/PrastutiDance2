@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Play, Activity, Music, Heart, Users, Star } from 'lucide-react';
+import { Play, Activity, Music, Heart, Users, Star, Mail } from 'lucide-react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,8 +17,8 @@ const servicesData = [
 ];
 
 const videosData = [
-  { id: 1, title: 'Hip Hop Routine', thumbnail: 'https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop' },
-  { id: 2, title: 'Yoga Flow', thumbnail: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=600&auto=format&fit=crop' },
+  { id: 1, title: 'Hip Hop Routine', thumbnail: 'src/assets/HipHo.jpeg' },
+  { id: 2, title: 'Yoga Flow', thumbnail: 'src/assets/Yoga1.jpeg' },
   { id: 3, title: 'Zumba Party', thumbnail: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop' },
 ];
 
@@ -283,6 +285,15 @@ const Home = () => {
             <p>📞 8882867685, 9560775432</p>
             <p>📍 C-2/160, Block C, Yamuna Vihar, Delhi - 110053</p>
             <p>🕐 Mon – Sat: 7 a.m. to 9 p.m.</p>
+            <a href="https://www.instagram.com/prastuti_studio?igsh=ajhyNndqdXF4MTBv" className="social-link" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} /> Instagram
+            </a>
+            <a href="mailto:prastutidancestudio@gmail.com" className="social-link">
+              <Mail size={18} /> Gmail
+            </a>
+            <a href="https://www.youtube.com/@PrastutiDanceStudio" className="social-link" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faYoutube} /> Youtube
+            </a>
           </div>
         </div>
         <div className="footer-bottom">

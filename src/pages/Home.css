@@ -524,6 +524,26 @@
 }
 .footer-links a:hover { color: var(--accent-red); }
 
+.social-link {
+  display: flex !important;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+}
+.social-link:hover {
+  color: var(--accent-red) !important;
+  transform: translateX(5px);
+}
+.social-link svg {
+  transition: transform 0.3s ease;
+}
+.social-link:hover svg {
+  transform: rotate(10deg) scale(1.1);
+}
+
 .footer-bottom {
   text-align: center;
   padding: 1.5rem;
