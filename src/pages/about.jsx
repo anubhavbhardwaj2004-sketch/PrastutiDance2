@@ -1,6 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './about.css';
+import prastuti from '../assets/WhatsApp Image 2026-03-28 at 3.38.01 PM.jpeg';
+import rohit from '../assets/WhatsApp Image 2026-03-28 at 3.41.54 PM.jpeg';
 
 const valuesData = [
   { icon: '🎭', title: 'Passion First', desc: 'We ignite a love for dance and movement in every student who walks through our doors.', color: '#ff2a4b' },
@@ -13,12 +14,12 @@ const instructorsData = [
   {
     name: 'Prastuti Ma\'am'+'Priya Ma\'am',
     role: 'Founder & Lead Instructor',
-    img: 'src/assets/WhatsApp Image 2026-03-28 at 3.38.01 PM.jpeg',
+    img: prastuti,
   },
   {
     name: 'Rohit Sir',
     role: 'Bollywood & Hip-Hop',
-    img: 'src/assets/WhatsApp Image 2026-03-28 at 3.41.54 PM.jpeg   ',
+    img: rohit,
   },
   {
     name: 'Priya Ma\'am',
