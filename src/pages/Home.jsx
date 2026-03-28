@@ -6,7 +6,8 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
-
+import hiphop from '../assets/HipHo.jpeg';
+import yoga from '../assets/Yoga1.jpeg';
 gsap.registerPlugin(ScrollTrigger);
 
 const servicesData = [
@@ -17,8 +18,8 @@ const servicesData = [
 ];
 
 const videosData = [
-  { id: 1, title: 'Hip Hop Routine', thumbnail: 'src/assets/HipHo.jpeg' },
-  { id: 2, title: 'Yoga Flow', thumbnail: 'src/assets/Yoga1.jpeg' },
+  { id: 1, title: 'Hip Hop Routine', thumbnail: hiphop },
+  { id: 2, title: 'Yoga Flow', thumbnail: yoga },
   { id: 3, title: 'Zumba Party', thumbnail: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop' },
 ];
 
