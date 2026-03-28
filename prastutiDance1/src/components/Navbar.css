@@ -1,0 +1,130 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  padding: 1.5rem 0;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(3, 3, 5, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+}
+
+.prastuti-text {
+  font-size: 2.2rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  margin-left: 2px;
+  box-shadow: 0 0 10px var(--accent-red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-item {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-red);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  color: white;
+}
+
+.mobile-toggle {
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70vw;
+  height: 100vh;
+  background: #050508;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem;
+  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-nav-item {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+    z-index: 1001; /* Above mobile menu */
+  }
+}

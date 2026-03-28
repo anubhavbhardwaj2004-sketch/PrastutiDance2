@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Pacifico&display=swap');
+
+:root {
+  --bg-color: #030305;
+  --surface-color: #0a0a0e;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-red: #ff2a4b;
+  --accent-blue: #00f0ff;
+  --accent-purple: #b52aff;
+  --accent-green: #39ff14;
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(16px);
+  
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.font-script {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Reusable Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%; /* Relative padding for better mobile fit */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--accent-red) 0%, #cc0022 100%);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem; /* Slightly smaller for flexibility */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 42, 75, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-red) 100%);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 42, 75, 0.5);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: clamp(1rem, 5vw, 2rem); /* Dynamic padding */
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Common Layouts */
+.section-padding {
+  padding: clamp(3rem, 10vw, 6.5rem) 0;
+}
+
+.section-title {
+  font-size: clamp(2rem, 8vw, 3.2rem); /* More responsive text size */
+  text-align: center;
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+  position: relative;
+  display: block; /* Centers easier */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-red);
+  border-radius: 2px;
+}
+
+.img-frame{
+  /* height: 40%; REMOVED: potentially breaking layouts on mobile */
+  margin: 0; /* Reset margins from user input for safer layouts */
+  width: 100%;
+}
+
+.frontlogo {
+  margin-top: 2rem;
+  max-width: 100%;
+  height: auto;
+}
+
+@import "tailwindcss";

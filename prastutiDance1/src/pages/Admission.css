@@ -1,0 +1,225 @@
+/* Admission Page Styles */
+
+.admission-page {
+  padding-top: 80px; /* Navbar space */
+}
+
+.admission-hero {
+  position: relative;
+  text-align: center;
+  padding: 8rem 0 4rem 0;
+  background: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop') no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(3,3,5,0.8), rgba(3,3,5,1));
+}
+
+.pt-title, .hero-subtitle {
+  position: relative;
+  z-index: 10;
+}
+
+.pt-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Admission Grid */
+.admission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Form Styles */
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.input-group input, .select-wrapper select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.input-group input:focus, .select-wrapper select:focus {
+  border-color: var(--accent-red);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+
+/* Select Styling */
+.select-wrapper select {
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Billing Column */
+.billing-card {
+  padding: 2.5rem !important;
+  background: linear-gradient(145deg, rgba(20, 20, 25, 0.8), rgba(10, 10, 15, 0.9)) !important;
+}
+
+.bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+.fee-badge {
+  background: rgba(255, 42, 75, 0.15);
+  color: var(--accent-red);
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 42, 75, 0.3);
+}
+
+.bill-includes {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.bill-includes li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Payment Toggle */
+.payment-options-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.payment-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pay-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pay-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pay-box.active {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+/* Payment Sections */
+.qr-section, .cash-section {
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.qr-code-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.qr-code-box img {
+  width: 150px;
+  height: 150px;
+}
+
+.qr-instruct, .qr-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cash-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem !important;
+  font-size: 1.2rem !important;
+}
+
+/* Animation */
+.slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .pt-title { font-size: 2.8rem; margin-bottom: 0.5rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .admission-hero { padding: 6rem 0 3rem 0; }
+  .form-row { flex-direction: column; gap: 0.5rem; }
+  .form-title { font-size: 1.6rem; margin-bottom: 1.5rem; }
+  .billing-card { padding: 1.5rem !important; }
+  .pay-box { padding: 1rem; }
+  .fee-badge { font-size: 1.25rem; }
+  .input-group label { font-size: 0.85rem; }
+  .qr-code-box img { width: 120px; height: 120px; }
+}
+
