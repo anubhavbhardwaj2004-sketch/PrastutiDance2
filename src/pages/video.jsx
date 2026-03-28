@@ -1,5 +1,5 @@
 import React from 'react';
-import './vidieo.css';
+import './video.css';
 
 // Import local video assets
 import video1 from '../assets/WhatsApp Video 2026-03-28 at 4.02.16 PM.mp4';
