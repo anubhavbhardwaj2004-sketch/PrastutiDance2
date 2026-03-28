@@ -12,17 +12,17 @@ const valuesData = [
 
 const instructorsData = [
   {
-    name: 'Prastuti Ma\'am' + 'Priya Ma\'am',
+    name: 'Prastuti Ma\'am' + 'Akansha Ma\'am',
     role: 'Founder & Lead Instructor',
     img: prastuti,
   },
   {
-    name: 'Rohit Sir',
+    name: 'Prince Sir',
     role: 'Bollywood & Hip-Hop',
     img: rohit,
   },
   {
-    name: 'Priya Ma\'am',
+    name: 'Akansha Ma\'am',
     role: 'Yoga & Zumba',
     img: prastuti,
   },
