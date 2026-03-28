@@ -12,7 +12,7 @@ const valuesData = [
 
 const instructorsData = [
   {
-    name: 'Prastuti Ma\'am'+'Priya Ma\'am',
+    name: 'Prastuti Ma\'am' + 'Priya Ma\'am',
     role: 'Founder & Lead Instructor',
     img: prastuti,
   },
