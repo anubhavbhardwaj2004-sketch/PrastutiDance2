@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './about.css';
 import prastuti from '../assets/WhatsApp Image 2026-03-28 at 3.38.01 PM.jpeg';
 import rohit from '../assets/WhatsApp Image 2026-03-28 at 3.41.54 PM.jpeg';
-
+import frontlogo from '../assets/Screenshot 2026-03-28 134130.png';
 const valuesData = [
   { icon: '🎭', title: 'Passion First', desc: 'We ignite a love for dance and movement in every student who walks through our doors.', color: '#ff2a4b' },
   { icon: '🏆', title: 'Excellence', desc: 'Professional-grade training that prepares students for stage performances and competitions.', color: '#ffcf00' },
@@ -55,7 +55,7 @@ const About = () => {
             <div className="about-img-box">
               <div className="img-frame">
                 <img className='frontlogo'
-                  src="src/assets/Screenshot 2026-03-28 134130.png "
+                  src={frontlogo}
                   alt="Prastuti Dance Studio"
                 />
                 <div className="img-glow" />
