@@ -1,26 +1,31 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Play, Activity, Music, Heart, Users, Star, Mail } from 'lucide-react';
+import { Play, Activity, Footprints, Heart, Users, Star, Mail, X } from 'lucide-react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import hiphop from '../assets/HipHo.jpeg';
 import yoga from '../assets/Yoga1.jpeg';
+import zumba from '../assets/Zumba.jpeg'
+import Prastuti from '../assets/Prastuti.jpeg';
+import Hiphop from '../assets/Hiphop.mp4';
+import YogaVideo from '../assets/Yoga.mp4';
+import ZumbaVideo from '../assets/Zumbavideo.mp4';
 gsap.registerPlugin(ScrollTrigger);
 
 const servicesData = [
-  { id: 1, title: 'Dance Classes', icon: <Music size={40} />, desc: 'Professional training in Bollywood, Hip-Hop, Contemporary & more for all ages.', color: '#ff2a4b', delay: 0.1 },
+  { id: 1, title: 'Dance Classes', icon: <Footprints size={40} />, desc: 'Professional training in Bollywood, Hip-Hop, Contemporary & more for all ages.', color: '#ff2a4b', delay: 0.1 },
   { id: 2, title: 'Yoga Sessions', icon: <Activity size={40} />, desc: 'Focus on flexibility, strength, and mindfulness for overall wellness.', color: '#00f0ff', delay: 0.2 },
   { id: 3, title: 'Zumba Fitness', icon: <Heart size={40} />, desc: 'High-energy fitness combining dance and cardio to burn calories and have fun.', color: '#39ff14', delay: 0.3 },
   { id: 4, title: 'Wedding Dance', icon: <Users size={40} />, desc: 'Personalized choreography for your special day — make it truly memorable.', color: '#ffcf00', delay: 0.4 },
 ];
 
 const videosData = [
-  { id: 1, title: 'Hip Hop Routine', thumbnail: hiphop },
-  { id: 2, title: 'Yoga Flow', thumbnail: yoga },
-  { id: 3, title: 'Zumba Party', thumbnail: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop' },
+  { id: 1, title: 'Hip Hop Routine', thumbnail: hiphop, video: Hiphop },
+  { id: 2, title: 'Yoga Flow', thumbnail: yoga, video: YogaVideo },
+  { id: 3, title: 'Zumba Party', thumbnail: zumba, video: ZumbaVideo },
 ];
 
 // Generates floating particle positions
@@ -36,6 +41,7 @@ const particles = Array.from({ length: 30 }, (_, i) => ({
 const Home = () => {
   const heroRef = useRef(null);
   const canvasRef = useRef(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     // Animate floating particles
@@ -183,7 +189,7 @@ const Home = () => {
           <div className="about-img-box">
             <div className="img-frame">
               <img
-                src="https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=800&auto=format&fit=crop"
+                src={Prastuti}
                 alt="Prastuti Studio"
               />
               <div className="img-glow"></div>
@@ -218,6 +224,8 @@ const Home = () => {
       <section className="services-section section-padding" id="services">
         <div className="container">
           <h2 className="section-title animate-title">Our <span className="text-gradient">Disciplines</span></h2>
+        <br></br>
+        <br></br>
           <p className="section-sub animate-title">Find the perfect class and move to your own rhythm</p>
           <div className="services-grid">
             {servicesData.map((s) => (
@@ -238,10 +246,18 @@ const Home = () => {
       <section className="videos-section section-padding" id="videos">
         <div className="container">
           <h2 className="section-title animate-title">Studio <span className="font-script text-gradient-accent">Highlights</span></h2>
+         <br></br>
+         <br></br>
+         
           <p className="section-sub animate-title">A glimpse into our vibrant studio world</p>
           <div className="videos-grid">
             {videosData.map((video) => (
-              <div key={video.id} className="video-card">
+              <div 
+                key={video.id} 
+                className="video-card"
+                onClick={() => video.video && setSelectedVideo(video)}
+                style={{ cursor: video.video ? 'pointer' : 'default' }}
+              >
                 <div className="video-thumbnail">
                   <img src={video.thumbnail} alt={video.title} />
                   <div className="play-overlay">
@@ -256,10 +272,28 @@ const Home = () => {
               </div>
             ))}
           </div>
+          </div>
+
+          {/* Video Modal Overlay */}
+          {selectedVideo && (
+            <div className="video-modal-overlay" onClick={() => setSelectedVideo(null)}>
+              <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="close-modal" onClick={() => setSelectedVideo(null)}>
+                  <X size={24} />
+                </button>
+                <div className="video-wrapper">
+                  <video src={selectedVideo.video} controls autoPlay playsInline className="modal-video" />
+                </div>
+                <div className="modal-video-label">
+                  <h3>{selectedVideo.title}</h3>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             <Link to="/admission" className="btn-primary">Ready to Move? Enroll Now →</Link>
           </div>
-        </div>
       </section>
 
       {/* ── FOOTER ── */}
@@ -275,10 +309,13 @@ const Home = () => {
           <div className="footer-col">
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Our Classes</a></li>
-              <li><a href="#videos">Studio Videos</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/#services">Our Classes</Link></li>
+              <li><Link to="/videos">Studio Videos</Link></li>
               <li><Link to="/admission">Join Us</Link></li>
+              <li><Link to="/about">Batch Timings</Link></li>
+              <li><Link to="/achivements">Achievements</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
             </ul>
           </div>
           <div className="footer-col">

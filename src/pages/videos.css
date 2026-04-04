@@ -1,0 +1,243 @@
+/* ────────────────────────────────────────────────
+   vidieos.css  —  Prastuti Dance Studio Videos Page
+──────────────────────────────────────────────── */
+
+.video-page {
+  min-height: 100vh;
+  background: #090910;
+  color: #e8e8f0;
+  font-family: 'Inter', 'Outfit', sans-serif;
+  padding-top: 90px;
+}
+
+/* ── Page Hero ── */
+.video-hero {
+  position: relative;
+  text-align: center;
+  padding: 70px 24px 60px;
+  overflow: hidden;
+}
+
+.video-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(255, 42, 75, 0.15), transparent 70%),
+              radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0, 240, 255, 0.08), transparent 60%);
+  z-index: 0;
+}
+
+.video-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.video-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 42, 75, 0.12);
+  border: 1px solid rgba(255, 42, 75, 0.35);
+  color: #ff2a4b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.video-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ff2a4b 0%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.video-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(232, 232, 240, 0.6);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ── Videos Section ── */
+.videos-main-section {
+  padding: 40px 0 100px;
+}
+
+/* ── Video List — vertical stack of wide cards ── */
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Single video card — horizontal box ── */
+.video-box-card {
+  display: flex;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+  min-height: 360px;
+}
+
+.video-box-card:hover {
+  border-color: rgba(255, 42, 75, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* ── Video player side ── */
+.video-player-wrap {
+  flex: 1.4;
+  min-width: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.video-player-wrap video {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Custom video controls glow line at bottom */
+.video-player-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff2a4b, #ff6b35, #00f0ff);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-box-card:hover .video-player-wrap::after {
+  opacity: 1;
+}
+
+/* ── Info side ── */
+.video-info-side {
+  flex: 0.6;
+  padding: 38px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.video-number {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, rgba(255, 42, 75, 0.2), rgba(255, 107, 53, 0.1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.04em;
+}
+
+.video-tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  background: rgba(255, 42, 75, 0.1);
+  border: 1px solid rgba(255, 42, 75, 0.3);
+  color: #ff2a4b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+
+.video-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #e8e8f0;
+}
+
+.video-desc {
+  font-size: 0.92rem;
+  color: rgba(232, 232, 240, 0.5);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.video-divider {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2a4b, transparent);
+  border-radius: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .video-box-card {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .video-info-side {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 28px 24px;
+  }
+
+  .video-player-wrap video {
+    min-height: 240px;
+  }
+}
+@media (max-width: 600px) {
+  .video-hero-title { font-size: 1.8rem; }
+  .video-hero-sub { font-size: 0.9rem; }
+  .video-player-wrap video { min-height: 200px; }
+  .video-number { font-size: 2.5rem; }
+  .video-title { font-size: 1.25rem; }
+  .video-tag { font-size: 0.65rem; padding: 3px 12px; }
+  .video-list { gap: 24px; }
+  .video-box-card { border-radius: 16px; min-height: auto; }
+  .video-info-side { padding: 20px 16px; gap: 12px; }
+  .video-desc { font-size: 0.85rem; line-height: 1.6; }
+}

@@ -104,8 +104,9 @@ const About = () => {
         <div className="container">
           <div className="values-header">
             <div className="section-badge" style={{ margin: '0 auto 14px' }}>Our Values</div>
-            <h2 className="section-title">What Drives <span className="text-gradient-accent">Us</span></h2>
-            <p>The principles that shape every class and every dancer at Prastuti.</p>
+     <center><h2 className="section-title">What Drives <span className="text-gradient-accent">Us</span></h2></center>
+           <br></br>
+           <center> <p>The principles that shape every class and every dancer at Prastuti.</p></center>
           </div>
           <div className="values-grid">
             {valuesData.map((v) => (
@@ -116,7 +117,30 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+  <br></br><center><center className='section-title'><span className="text-gradient-accent">Batches</span></center></center>
+     <br></br>
+      <center>Fitness</center>
+<b><center>9 to 10:00 AM - Monday to Friday</center></b>
+      <br></br>
+      <center>Ladies</center>  
+      <b><center>12 to 1:00 PM - Monday to Friday</center></b>
+      <br></br>
+      <center>Kids</center>
+      <b><center>4:00 to 5:00 PM - Monday to Friday</center></b>
+      <br></br>
+      <center>Fitness</center>
+      <b><center>6:00 to 7:00 PM - Monday to Friday</center></b>
+      <br></br>
+      <center>Advance Dance</center>
+      <b><center>7:00 to 8:00 PM - Monday to Friday</center></b>
+      <br></br>
+      <center>Dance Beginner</center>
+      <b><center>8:00 to 9:00 PM - Monday to Friday</center></b>
+      </div>
       </section>
 
       {/* ── INSTRUCTORS ── */}

@@ -156,6 +156,8 @@ const Admission = () => {
           </div>
         </div>
       </section>
+      
+      
     </div>
   );
 };
