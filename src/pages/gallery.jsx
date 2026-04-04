@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Camera } from 'lucide-react';
 import './gallery.css';
+// piyush sigh
 import Openingpic from '../assets/Openingpic.jpeg';
 import Studio_opening from '../assets/Studio_opening.mp4';
 import StudioTShirt from '../assets/Studio_t-shrit.jpeg';
