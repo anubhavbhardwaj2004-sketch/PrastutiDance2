@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './app.css';
 
 const AppPage = () => {
-  const apkFile = '/android/app/build/outputs/apk/debug/prastuti-apk.apk';
+  const apkFile = 'android/app/build/outputs/apk/debug/prastuti-apk.apk';
 
   return (
     <div className="app-page">
