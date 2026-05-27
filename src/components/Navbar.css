@@ -128,3 +128,16 @@
     z-index: 1001; /* Above mobile menu */
   }
 }
+
+@media (max-width: 640px) {
+  .navbar { padding: 1rem 0; }
+  .navbar.scrolled { padding: 0.8rem 0; }
+  .prastuti-text { font-size: 1.8rem; }
+  .mobile-menu { width: 80vw; padding: 5rem 1.5rem; }
+  .mobile-nav-item { font-size: 1.25rem; margin-bottom: 1.5rem; }
+}
+
+@media (max-width: 400px) {
+  .prastuti-text { font-size: 1.6rem; }
+  .mobile-menu { width: 100vw; }
+}

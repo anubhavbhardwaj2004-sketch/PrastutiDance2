@@ -85,7 +85,7 @@ const Vidieo = () => {
               <div className="video-info-side">
                 <span className="video-number">04</span>
                 <span className="video-tag">Professional Project</span>
-                <h3 className="video-title">Guru Randhawa x Akansha Mam</h3>
+                <h3 className="video-title">Duet Dancing</h3>
                 <div className="video-divider"></div>
                 <p className="video-desc">
                   Featuring our lead artist Akansha Mam in an official collaboration. Witness elite choreography on a national stage.

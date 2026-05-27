@@ -138,7 +138,7 @@ const Admission = () => {
                     <p className="qr-instruct">Scan using PhonePe, GPay, or Paytm</p>
                     <div className="qr-code-box">
                       {/* Using a placeholder QR from API */}
-                      <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPI_ID:prastuti@okicici&color=050505&bgcolor=ffffff`} alt="Payment QR Code" />
+                      <img src={`src/assets/paymentQr.jpeg?size=500x500&color=050505&bgcolor=ffffff`} alt="Payment QR Code" />
                     </div>
                     <p className="qr-note">Complete payment and send the receipt on WhatsApp along with your form.</p>
                   </div>

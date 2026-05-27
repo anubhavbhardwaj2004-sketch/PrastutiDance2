@@ -139,8 +139,20 @@
 }
 
 @media (max-width: 640px) {
+  .gallery-hero { padding: 3rem 1rem 2.5rem; }
+  .gallery-hero h1 { font-size: 2.2rem; }
+  .gallery-hero-sub { font-size: 1rem; }
+  .gallery-container { padding: 0 1.2rem 4rem; }
   .gallery-main-grid { gap: 1rem; }
   .span-large, .span-tall, .span-med, .span-small, .span-narrow { 
-    grid-column: span 12; height: 300px; 
+    grid-column: span 12; height: 260px;
   }
+  .gallery-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.2rem; }
+  .gallery-overlay h3 { transform: none; font-size: 1.1rem; }
+  .gallery-overlay p { transform: none; font-size: 0.8rem; }
+}
+
+@media (max-width: 400px) {
+  .gallery-hero h1 { font-size: 1.8rem; }
+  .span-large, .span-tall, .span-med, .span-small, .span-narrow { height: 220px; }
 }

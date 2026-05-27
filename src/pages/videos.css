@@ -230,14 +230,21 @@
   }
 }
 @media (max-width: 600px) {
-  .video-hero-title { font-size: 1.8rem; }
-  .video-hero-sub { font-size: 0.9rem; }
-  .video-player-wrap video { min-height: 200px; }
-  .video-number { font-size: 2.5rem; }
-  .video-title { font-size: 1.25rem; }
+  .video-hero { padding: 50px 1.5rem 40px; }
+  .video-hero-title { font-size: 2.2rem; }
+  .video-hero-sub { font-size: 0.95rem; }
+  .video-player-wrap video { min-height: 220px; }
+  .video-number { font-size: 3rem; margin-bottom: -10px; }
+  .video-title { font-size: 1.4rem; }
   .video-tag { font-size: 0.65rem; padding: 3px 12px; }
-  .video-list { gap: 24px; }
-  .video-box-card { border-radius: 16px; min-height: auto; }
-  .video-info-side { padding: 20px 16px; gap: 12px; }
-  .video-desc { font-size: 0.85rem; line-height: 1.6; }
+  .video-list { gap: 2rem; }
+  .video-box-card { border-radius: 18px; min-height: auto; }
+  .video-info-side { padding: 24px 20px; gap: 12px; text-align: center; align-items: center; }
+  .video-desc { font-size: 0.9rem; line-height: 1.6; }
+  .video-divider { margin: 0 auto; }
+}
+
+@media (max-width: 400px) {
+  .video-hero-title { font-size: 1.8rem; }
+  .video-player-wrap video { min-height: 180px; }
 }
