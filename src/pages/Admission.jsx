@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle, CreditCard, Banknote } from 'lucide-react';
+import paymentQr from '../assets/paymentQr.jpeg';
 import './Admission.css';
 
 const Admission = () => {
@@ -137,8 +138,7 @@ const Admission = () => {
                   <div className="qr-section slide-down">
                     <p className="qr-instruct">Scan using PhonePe, GPay, or Paytm</p>
                     <div className="qr-code-box">
-                      {/* Using a placeholder QR from API */}
-                      <img src={`src/assets/paymentQr.jpeg?size=500x500&color=050505&bgcolor=ffffff`} alt="Payment QR Code" />
+                      <img src={paymentQr} alt="Payment QR Code" />
                     </div>
                     <p className="qr-note">Complete payment and send the receipt on WhatsApp along with your form.</p>
                   </div>
