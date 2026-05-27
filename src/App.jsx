@@ -7,6 +7,7 @@ import About from './pages/about';
 import Video from './pages/videos';
 import Achivements from './pages/Achivements';
 import Gallery from './pages/gallery';
+import AppPage from './pages/app';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/videos" element={<Video />} />
             <Route path="/achivements" element={<Achivements />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/app" element={<AppPage />} />
           </Routes>
         </main>
       </div>

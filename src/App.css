@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 5.2rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  main {
+    padding-top: 5rem;
+  }
+}
